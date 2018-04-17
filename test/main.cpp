@@ -59,6 +59,12 @@ void test7(){
 	testing = -testing;
 	assert(testing.current_range == 3);
 }
+void test8(){
+	hour = testing;
+	assert(hour.current_range == 3);
+	hour = 13;
+	assert(hour.current_range == 5);
+}
 int main() 
 {
 	test1();
@@ -68,5 +74,6 @@ int main()
 	test5();
 	test6();
 	test7();
+	test8();
 	cout << "the testing has finishd";
 }
