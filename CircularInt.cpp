@@ -16,6 +16,7 @@ CircularInt::CircularInt(const CircularInt& other)
 CircularInt& CircularInt::operator=(const int num)
 {
     this->current_range = num;
+    (*this) += 0;
     return *this;
 }
 CircularInt& CircularInt::operator=(const CircularInt& c)
