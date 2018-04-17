@@ -38,14 +38,14 @@ inline const CircularInt operator+(const CircularInt& c , const int num)
     copy += num;
     return copy;
 }
-inline const CircularInt operator+(const CircularInt& c1 , const CircularInt& c2)
+inline const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
 {
     CircularInt temp(c1);
     temp += c2;
     return temp;
 
 }
-inline const CircularInt operator-(const int num,const CircularInt& c )
+inline const CircularInt operator-(const int num, CircularInt const& c )
 {
     CircularInt copy(c);
     copy -= num;
@@ -83,7 +83,7 @@ inline const CircularInt operator*(const int num , const CircularInt& c)
     copy *= num;
     return copy;
 }
-inline const CircularInt operator/(const CircularInt& c , const int num)
+inline const CircularInt operator/(CircularInt const& c , const int num)
 {
     CircularInt copy(c);
     copy /= num;
@@ -207,7 +207,7 @@ CircularInt& CircularInt::operator%=(const int other)
     return *this;
 }
 /* IOstream */
-inline ostream& operator<< (ostream& os , const CircularInt& obj)
+inline ostream& operator<< (ostream& os ,CircularInt const& obj)
 {
     os << obj.current_range;
     return os;
