@@ -1,5 +1,5 @@
 #include "CircularInt.hpp"
-
+/* Constructor */
 CircularInt::CircularInt(int min , int max)
 {
     min_range = min;
@@ -12,6 +12,142 @@ CircularInt::CircularInt(const CircularInt& other)
     max_range = other.max_range;
     current_range = other.current_range;
 };
+/* Arithmetic operators */
+CircularInt& CircularInt::operator=(const int num)
+{
+    this->current_range = num;
+    return *this;
+}
+CircularInt& CircularInt::operator=(const CircularInt& c)
+{
+    this-> min_range = c.min_range;
+    this->max_range = c.max_range;
+    this->current_range = c.current_range;
+    return *this;
+}
+inline const CircularInt operator+(const int num,const CircularInt& c )
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
+inline const CircularInt operator+(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
+inline const CircularInt operator+(const CircularInt& c1 , const CircularInt& c2)
+{
+    CircularInt temp(c1);
+    temp += c2;
+    return temp;
+
+}
+inline const CircularInt operator-(const int num,const CircularInt& c )
+{
+    CircularInt copy(c);
+    copy -= num;
+    copy *= (-1);
+    return copy;
+}
+inline const CircularInt operator-(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy -=num;
+    return copy;
+}
+inline const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
+{
+    CircularInt temp(c1);
+    temp -= c2;
+    return temp;
+
+}
+CircularInt CircularInt::operator-()
+{
+    CircularInt copy(*this);
+    copy *= (-1);
+    return copy;
+}
+inline const CircularInt operator*(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy *= num;
+    return copy;
+}
+inline const CircularInt operator*(const int num , const CircularInt& c)
+{
+    CircularInt copy(c);
+    copy *= num;
+    return copy;
+}
+inline const CircularInt operator/(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy /= num;
+    return copy;
+}
+inline const CircularInt operator%(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy %= num;
+    return copy;
+}
+CircularInt& CircularInt::operator++()
+{
+    (*this) += 1;
+    return *this;
+}
+CircularInt CircularInt::operator++(const int other)
+{
+    CircularInt copy(*this);
+    ++(*this);
+    return copy;
+}
+CircularInt& CircularInt::operator--()
+{
+    (*this) -= 1;
+    return *this;
+}
+CircularInt CircularInt::operator--(const int other)
+{
+    CircularInt copy(*this);
+    --(*this);
+    return copy;
+}
+/* Comparison operators */
+inline bool operator==(const CircularInt c1 , const CircularInt c2)
+{
+    return c1.current_range == c2.current_range
+        && c1.max_range == c2.max_range &&
+        c1.min_range == c2.min_range;
+}
+inline bool operator!=(const CircularInt c1 , const CircularInt c2)
+{
+    return !(c1 == c2);
+}
+inline bool operator>(const CircularInt c1 , const CircularInt c2)
+{
+    return c1.current_range > c2.current_range
+        && c1.max_range == c2.max_range &&
+        c1.min_range == c2.min_range;
+}
+inline bool operator<(const CircularInt c1 , const CircularInt c2)
+{
+    return c1.current_range < c2.current_range
+        && c1.max_range == c2.max_range &&
+        c1.min_range == c2.min_range;
+}
+inline bool operator>=(const CircularInt c1 , const CircularInt c2)
+{
+    return c1 == c2 || c1 > c2;
+}
+inline bool operator<=(const CircularInt c1 , const CircularInt c2)
+{
+    return c1 == c2 || c1 < c2;
+}
+/* Compound assignment operators */
 CircularInt& CircularInt::operator+=(const int other)
 {
     current_range += other;
@@ -47,12 +183,6 @@ CircularInt& CircularInt::operator*=(const CircularInt& other)
     (*this) *= other.current_range;
     return *this;
 }
-CircularInt& CircularInt::operator%=(const int other)
-{
-    current_range %= other;
-    (*this)+=0;
-    return *this;
-}
 CircularInt& CircularInt::operator/=(const int num)
 {
     if(current_range % num == 0)
@@ -69,34 +199,13 @@ CircularInt& CircularInt::operator/=(const int num)
     }
     return *this;
 }
-CircularInt& CircularInt::operator++()
+CircularInt& CircularInt::operator%=(const int other)
 {
-    (*this) += 1;
+    current_range %= other;
+    (*this)+=0;
     return *this;
 }
-CircularInt CircularInt::operator++(const int other)
-{
-    CircularInt copy(*this);
-    ++(*this);
-    return copy;
-}
-CircularInt& CircularInt::operator--()
-{
-    (*this) -= 1;
-    return *this;
-}
-CircularInt CircularInt::operator--(const int other)
-{
-    CircularInt copy(*this);
-    --(*this);
-    return copy;
-}
-CircularInt CircularInt::operator-()
-{
-    CircularInt copy(*this);
-    copy *= (-1);
-    return copy;
-}
+/* IOstream */
 inline ostream& operator<< (ostream& os , const CircularInt& obj)
 {
     os << obj.current_range;
@@ -107,97 +216,4 @@ inline istream& operator>>(istream& input, CircularInt& obj)
     input >> obj.min_range >> obj.max_range;
     obj.current_range = obj.min_range;
     return input;
-}
-inline const CircularInt operator-(const int num,const CircularInt& c )
-{
-    CircularInt copy(c);
-    copy -= num;
-    copy *= (-1);
-    return copy;
-}
-inline const CircularInt operator-(const CircularInt& c , const int num)
-{
-    CircularInt copy(c);
-    copy -=num;
-    return copy;
-}
-inline const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
-{
-    CircularInt temp(c1);
-    temp -= c2;
-    return temp;
-
-}
-inline const CircularInt operator+(const int num,const CircularInt& c )
-{
-    CircularInt copy(c);
-    copy += num;
-    return copy;
-}
-inline const CircularInt operator+(const CircularInt& c , const int num)
-{
-    CircularInt copy(c);
-    copy += num;
-    return copy;
-}
-inline const CircularInt operator+(const CircularInt& c1 , const CircularInt& c2)
-{
-    CircularInt temp(c1);
-    temp += c2;
-    return temp;
-
-}
-inline const CircularInt operator/(const CircularInt& c , const int num)
-{
-    CircularInt copy(c);
-    copy /= num;
-    return copy;
-}
-inline const CircularInt operator*(const CircularInt& c , const int num)
-{
-    CircularInt copy(c);
-    copy *= num;
-    return copy;
-}
-inline const CircularInt operator*(const int num , const CircularInt& c)
-{
-    CircularInt copy(c);
-    copy *= num;
-    return copy;
-}
-inline const CircularInt operator%(const CircularInt& c , const int num)
-{
-    CircularInt copy(c);
-    copy %= num;
-    return copy;
-}
-inline bool operator==(const CircularInt c1 , const CircularInt c2)
-{
-    return c1.current_range == c2.current_range
-        && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
-}
-inline bool operator!=(const CircularInt c1 , const CircularInt c2)
-{
-    return !(c1 == c2);
-}
-inline bool operator>(const CircularInt c1 , const CircularInt c2)
-{
-    return c1.current_range > c2.current_range
-        && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
-}
-inline bool operator<(const CircularInt c1 , const CircularInt c2)
-{
-    return c1.current_range < c2.current_range
-        && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
-}
-inline bool operator>=(const CircularInt c1 , const CircularInt c2)
-{
-    return c1 == c2 || c1 > c2;
-}
-inline bool operator<=(const CircularInt c1 , const CircularInt c2)
-{
-    return c1 == c2 || c1 < c2;
 }
