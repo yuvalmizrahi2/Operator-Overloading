@@ -47,7 +47,7 @@ void test6(){
 }
 void test7(){
 	testing = -testing;
-	assert(testing.current_range == 4);
+	assert(testing.current_range == 3);
 }
 int main() 
 {
