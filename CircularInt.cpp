@@ -207,9 +207,9 @@ CircularInt& CircularInt::operator%=(const int other)
     return *this;
 }
 /* IOstream */
-inline ostream& operator<< (ostream& os ,CircularInt const& obj)
+ostream& CircularInt::operator<< (ostream& os)
 {
-    os << obj.current_range;
+    os << current_range;
     return os;
 }
 inline istream& operator>>(istream& input, CircularInt& obj)
