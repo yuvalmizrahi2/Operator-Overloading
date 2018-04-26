@@ -1,17 +1,17 @@
 #include "CircularInt.hpp"
-// /* Constructor */
-// CircularInt::CircularInt(int min , int max)
-// {
-//     min_range = min;
-//     max_range = max;
-//     current_range = min;
-// };
-// CircularInt::CircularInt(const CircularInt& other)
-// {
-//     min_range = other.min_range;
-//     max_range = other.max_range;
-//     current_range = other.current_range;
-// };
+/* Constructor */
+CircularInt::CircularInt(int min , int max)
+{
+    min_range = min;
+    max_range = max;
+    current_range = min;
+};
+CircularInt::CircularInt(const CircularInt& other)
+{
+    min_range = other.min_range;
+    max_range = other.max_range;
+    current_range = other.current_range;
+};
 // /* Arithmetic operators */
 // CircularInt& CircularInt::operator=(const int num)
 // {
