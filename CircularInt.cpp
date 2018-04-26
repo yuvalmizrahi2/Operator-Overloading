@@ -26,24 +26,24 @@ CircularInt::CircularInt(const CircularInt& other)
 //     this->current_range = c.current_range;
 //     return *this;
 // }
-const CircularInt operator+(const int num,const CircularInt& c )
-{
-    CircularInt copy(c);
-    copy += num;
-    return copy;
-}
-const CircularInt operator+(const CircularInt& c , const int num)
-{
-    CircularInt copy(c);
-    copy += num;
-    return copy;
-}
-const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
-{
-    CircularInt temp(c1);
-    temp += c2;
-    return temp;
-}
+// const CircularInt operator+(const int num,const CircularInt& c )
+// {
+//     CircularInt copy(c);
+//     copy += num;
+//     return copy;
+// }
+// const CircularInt operator+(const CircularInt& c , const int num)
+// {
+//     CircularInt copy(c);
+//     copy += num;
+//     return copy;
+// }
+// const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
+// {
+//     CircularInt temp(c1);
+//     temp += c2;
+//     return temp;
+// }
 // const CircularInt operator-(const int num, CircularInt const& c )
 // {
 //     CircularInt copy(c);
