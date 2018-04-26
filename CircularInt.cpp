@@ -1,17 +1,17 @@
 #include "CircularInt.hpp"
-// /* Constructor */
-// CircularInt::CircularInt(int min , int max)
-// {
-//     min_range = min;
-//     max_range = max;
-//     current_range = min;
-// };
-// CircularInt::CircularInt(const CircularInt& other)
-// {
-//     min_range = other.min_range;
-//     max_range = other.max_range;
-//     current_range = other.current_range;
-// };
+/* Constructor */
+CircularInt::CircularInt(int min , int max)
+{
+    min_range = min;
+    max_range = max;
+    current_range = min;
+};
+CircularInt::CircularInt(const CircularInt& other)
+{
+    min_range = other.min_range;
+    max_range = other.max_range;
+    current_range = other.current_range;
+};
 // /* Arithmetic operators */
 // CircularInt& CircularInt::operator=(const int num)
 // {
@@ -32,12 +32,12 @@
 //     copy += num;
 //     return copy;
 // }
-// const CircularInt operator+(const CircularInt& c , const int num)
-// {
-//     CircularInt copy(c);
-//     copy += num;
-//     return copy;
-// }
+const CircularInt operator+(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
 // const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
 // {
 //     CircularInt temp(c1);
@@ -203,16 +203,16 @@
 // {
 //     return c1.current_range <= num;
 // }
-// /* Compound assignment operators */
-// CircularInt& CircularInt::operator+=(const int other)
-// {
-//     current_range += other;
-//     while(current_range > max_range)
-//         current_range -= (max_range-min_range+1);
-//     while(current_range < min_range)
-//         current_range += (max_range-min_range+1);
-//     return *this;
-// }
+/* Compound assignment operators */
+CircularInt& CircularInt::operator+=(const int other)
+{
+    current_range += other;
+    while(current_range > max_range)
+        current_range -= (max_range-min_range+1);
+    while(current_range < min_range)
+        current_range += (max_range-min_range+1);
+    return *this;
+}
 // CircularInt& CircularInt::operator+=(const CircularInt& other)
 // {
 //     (*this) += other.current_range;
@@ -261,15 +261,15 @@
 //     (*this)+=0;
 //     return *this;
 // }
-// /* IOstream */
-// ostream& operator<< (ostream& os ,CircularInt const& obj)
-// {
-//     os << obj.current_range;
-//     return os;
-// }
-// istream& operator>>(istream& input, CircularInt& obj)
-// {
-//     input >> obj.min_range >> obj.max_range;
-//     obj.current_range = obj.min_range;
-//     return input;
-// }
+/* IOstream */
+ostream& operator<< (ostream& os ,CircularInt const& obj)
+{
+    os << obj.current_range;
+    return os;
+}
+istream& operator>>(istream& input, CircularInt& obj)
+{
+    input >> obj.min_range >> obj.max_range;
+    obj.current_range = obj.min_range;
+    return input;
+}
