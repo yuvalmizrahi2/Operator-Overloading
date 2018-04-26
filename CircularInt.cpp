@@ -256,10 +256,7 @@ CircularInt& CircularInt::operator/=(const int num)
     }
     else 
     {
-        stringstream ss;
-        ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
-        string s = ss.str();
-        throw std::invalid_argument( s );
+        throw std::invalid_argument( "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range );
     }
     return *this;
 }
