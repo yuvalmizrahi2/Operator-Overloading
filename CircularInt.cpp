@@ -41,12 +41,12 @@ CircularInt::CircularInt(const CircularInt& other)
 //     copy += num;
 //     return copy;
 // }
-// const CircularInt operator+(const CircularInt& c , const int num)
-// {
-//     CircularInt copy(c);
-//     copy += num;
-//     return copy;
-// }
+const CircularInt operator+(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
 // const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
 // {
 //     CircularInt temp(c1);
@@ -97,12 +97,12 @@ CircularInt::CircularInt(const CircularInt& other)
 //     copy *= c2.current_range;
 //     return copy;
 // }
-// const CircularInt operator/(CircularInt const& c , const int num)
-// {
-//     CircularInt copy(c);
-//     copy /= num;
-//     return copy;
-// }
+const CircularInt operator/(CircularInt const& c , const int num)
+{
+    CircularInt copy(c);
+    copy /= num;
+    return copy;
+}
 // const CircularInt operator/(const int num , CircularInt const& c)
 // {
 //     CircularInt copy(c);
@@ -212,15 +212,15 @@ CircularInt::CircularInt(const CircularInt& other)
 //     return num <= c1.current_range;
 // }
 // /* Compound assignment operators */
-// CircularInt& CircularInt::operator+=(const int other)
-// {
-//     current_range += other;
-//     while(current_range > max_range)
-//         current_range -= (max_range-min_range+1);
-//     while(current_range < min_range)
-//         current_range += (max_range-min_range+1);
-//     return *this;
-// }
+CircularInt& CircularInt::operator+=(const int other)
+{
+    current_range += other;
+    while(current_range > max_range)
+        current_range -= (max_range-min_range+1);
+    while(current_range < min_range)
+        current_range += (max_range-min_range+1);
+    return *this;
+}
 // CircularInt& CircularInt::operator+=(const CircularInt& other)
 // {
 //     (*this) += other.current_range;
@@ -247,22 +247,22 @@ CircularInt::CircularInt(const CircularInt& other)
 //     (*this) *= other.current_range;
 //     return *this;
 // }
-// CircularInt& CircularInt::operator/=(const int num)
-// {
-//     if(current_range % num == 0)
-//     {
-//         current_range /= num;
-//         (*this) += 0;
-//     }
-//     else 
-//     {
-//         stringstream ss;
-//         ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
-//         string s = ss.str();
-//         throw s;
-//     }
-//     return *this;
-// }
+CircularInt& CircularInt::operator/=(const int num)
+{
+    if(current_range % num == 0)
+    {
+        current_range /= num;
+        (*this) += 0;
+    }
+    else 
+    {
+        stringstream ss;
+        ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
+        string s = ss.str();
+        throw s;
+    }
+    return *this;
+}
 // CircularInt& CircularInt::operator%=(const int other)
 // {
 //     current_range %= other;
