@@ -30,6 +30,7 @@ public:
     friend const CircularInt operator*(const int num , const CircularInt& c);
     friend const CircularInt operator*(const CircularInt& c1 , const CircularInt& c2);
     friend const CircularInt operator/(CircularInt const& c , const int num);
+    friend const CircularInt operator/(const int num , CircularInt const& c);
     friend const CircularInt operator%(const CircularInt& c , const int num);
     CircularInt& operator++();
     CircularInt operator++(const int other);
