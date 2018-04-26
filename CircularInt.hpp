@@ -66,5 +66,5 @@ public:
     // CircularInt& operator%=(const int other);
     /* IOstream */
     friend ostream& operator<<(ostream& os, CircularInt const& obj);
-    friend istream& operator>>(istream& input, CircularInt& obj);
+    // friend istream& operator>>(istream& input, CircularInt& obj);
 };
