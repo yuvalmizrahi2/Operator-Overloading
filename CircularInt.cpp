@@ -284,6 +284,6 @@ istream& operator>>(istream& input, CircularInt& obj)
         obj.max_range = obj.min_range;
         obj.min_range = temp;
     }
-    obj.current_range = obj.max_range;
+    obj.current_range = obj.min_range;
     return input;
 }
