@@ -256,7 +256,7 @@ CircularInt& CircularInt::operator/=(const int num)
     }
     else 
     {
-        throw std::invalid_argument( "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range );
+        throw std::invalid_argument( "There is no such a number\n" );
     }
     return *this;
 }
