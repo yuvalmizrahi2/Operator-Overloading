@@ -26,24 +26,23 @@ CircularInt::CircularInt(const CircularInt& other)
 //     this->current_range = c.current_range;
 //     return *this;
 // }
-// const CircularInt operator+(const int num,const CircularInt& c )
-// {
-//     CircularInt copy(c);
-//     copy += num;
-//     return copy;
-// }
-// const CircularInt operator+(const CircularInt& c , const int num)
-// {
-//     CircularInt copy(c);
-//     copy += num;
-//     return copy;
-// }
-// const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
-// {
-//     CircularInt temp(c1);
-//     temp += c2;
-//     return temp;
-
+const CircularInt operator+(const int num,const CircularInt& c )
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
+const CircularInt operator+(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
+const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
+{
+    CircularInt temp(c1);
+    temp += c2;
+    return temp;
 // }
 // const CircularInt operator-(const int num, CircularInt const& c )
 // {
@@ -203,16 +202,16 @@ CircularInt::CircularInt(const CircularInt& other)
 // {
 //     return num <= c1.current_range;
 // }
-// /* Compound assignment operators */
-// CircularInt& CircularInt::operator+=(const int other)
-// {
-//     current_range += other;
-//     while(current_range > max_range)
-//         current_range -= (max_range-min_range+1);
-//     while(current_range < min_range)
-//         current_range += (max_range-min_range+1);
-//     return *this;
-// }
+/* Compound assignment operators */
+CircularInt& CircularInt::operator+=(const int other)
+{
+    current_range += other;
+    while(current_range > max_range)
+        current_range -= (max_range-min_range+1);
+    while(current_range < min_range)
+        current_range += (max_range-min_range+1);
+    return *this;
+}
 // CircularInt& CircularInt::operator+=(const CircularInt& other)
 // {
 //     (*this) += other.current_range;
