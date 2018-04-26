@@ -2,9 +2,18 @@
 /* Constructor */
 CircularInt::CircularInt(int min , int max)
 {
-    min_range = min;
-    max_range = max;
-    current_range = min;
+    if(max < min)
+    {
+        min_range = max;
+        max_range = min;
+        current_range = min_range;
+    }
+    else
+    {
+        min_range = min;
+        max_range = max;
+        current_range = min;
+    }
 };
 CircularInt::CircularInt(const CircularInt& other)
 {
