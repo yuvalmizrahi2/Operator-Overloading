@@ -12,7 +12,7 @@ CircularInt::CircularInt(int min , int max)
     {
         min_range = min;
         max_range = max;
-        current_range = min;
+        current_range = min_range;
     }
 };
 CircularInt::CircularInt(const CircularInt& other)
@@ -281,15 +281,15 @@ istream& operator>>(istream& input, CircularInt& obj)
     input >> min >> max;
     if(max < min)
     {
-        min_range = max;
-        max_range = min;
-        current_range = min_range;
+        obj.min_range = max;
+        obj.max_range = min;
+        obj.current_range = obj.min_range;
     }
     else
     {
-        min_range = min;
-        max_range = max;
-        current_range = min;
+        obj.min_range = min;
+        obj.max_range = max;
+        obj.current_range = obj.min_range;
     }
     return input;
 }
