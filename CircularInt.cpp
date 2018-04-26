@@ -32,12 +32,12 @@ CircularInt::CircularInt(const CircularInt& other)
 //     copy += num;
 //     return copy;
 // }
-// const CircularInt operator+(const CircularInt& c , const int num)
-// {
-//     CircularInt copy(c);
-//     copy += num;
-//     return copy;
-// }
+const CircularInt operator+(const CircularInt& c , const int num)
+{
+    CircularInt copy(c);
+    copy += num;
+    return copy;
+}
 // const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
 // {
 //     CircularInt temp(c1);
