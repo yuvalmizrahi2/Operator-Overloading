@@ -278,6 +278,12 @@ ostream& operator<< (ostream& os ,CircularInt const& obj)
 istream& operator>>(istream& input, CircularInt& obj)
 {
     input >> obj.min_range >> obj.max_range;
+    if(obj.min_range > obj.max_range)
+    {
+        int temp = obj.max_range;
+        obj.max_range = obj.min_range;
+        obj.min_range = temp;
+    }
     obj.current_range = obj.max_range;
     return input;
 }
