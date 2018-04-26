@@ -1,5 +1,4 @@
 #include "CircularInt.hpp"
-using namespace std;
 /* Constructor */
 CircularInt::CircularInt(int min , int max)
 {
@@ -278,8 +277,7 @@ ostream& operator<< (ostream& os ,CircularInt const& obj)
 }
 istream& operator>>(istream& input, CircularInt& obj)
 {
-    input >> obj.min_range;
-    input >> obj.max_range;
+    input >> obj.min_range >> obj.max_range;
     obj.current_range = obj.max_range;
     return input;
 }
