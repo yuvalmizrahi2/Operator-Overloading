@@ -29,7 +29,7 @@ public:
     // friend const CircularInt operator*(const CircularInt& c , const int num);
     // friend const CircularInt operator*(const int num , const CircularInt& c);
     // friend const CircularInt operator*(const CircularInt& c1 , const CircularInt& c2);
-    // friend const CircularInt operator/(CircularInt const& c , const int num);
+    friend const CircularInt operator/(CircularInt const& c , const int num);
     // friend const CircularInt operator/(const int num , CircularInt const& c); 
     // friend const CircularInt operator%(const CircularInt& c , const int num);
     // CircularInt& operator++();
@@ -62,7 +62,7 @@ public:
     // CircularInt& operator-=(const CircularInt& other);
     // CircularInt& operator*=(const int other);
     // CircularInt& operator*=(const CircularInt& other);  
-    // CircularInt& operator/=(const int other);
+    CircularInt& operator/=(const int other);
     // CircularInt& operator%=(const int other);
     // /* IOstream */
     friend ostream& operator<<(ostream& os, CircularInt const& obj);

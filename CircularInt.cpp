@@ -89,12 +89,12 @@ const CircularInt operator+(const CircularInt& c , const int num)
 //     copy *= c2.current_range;
 //     return copy;
 // }
-// const CircularInt operator/(CircularInt const& c , const int num)
-// {
-//     CircularInt copy(c);
-//     copy /= num;
-//     return copy;
-// }
+const CircularInt operator/(CircularInt const& c , const int num)
+{
+    CircularInt copy(c);
+    copy /= num;
+    return copy;
+}
 // const CircularInt operator/(const int num , CircularInt const& c)
 // {
 //     CircularInt copy(c);
@@ -239,22 +239,22 @@ CircularInt& CircularInt::operator+=(const int other)
 //     (*this) *= other.current_range;
 //     return *this;
 // }
-// CircularInt& CircularInt::operator/=(const int num)
-// {
-//     if(current_range % num == 0)
-//     {
-//         current_range /= num;
-//         (*this) += 0;
-//     }
-//     else 
-//     {
-//         stringstream ss;
-//         ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
-//         string s = ss.str();
-//         throw s;
-//     }
-//     return *this;
-// }
+CircularInt& CircularInt::operator/=(const int num)
+{
+    if(current_range % num == 0)
+    {
+        current_range /= num;
+        (*this) += 0;
+    }
+    else 
+    {
+        stringstream ss;
+        ss << "There is no number x in {" << min_range << "," << max_range << "} such that x*" << num << "=" << current_range;
+        string s = ss.str();
+        throw s;
+    }
+    return *this;
+}
 // CircularInt& CircularInt::operator%=(const int other)
 // {
 //     current_range %= other;
