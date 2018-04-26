@@ -261,15 +261,15 @@
 //     (*this)+=0;
 //     return *this;
 // }
-// /* IOstream */
-// ostream& operator<< (ostream& os ,CircularInt const& obj)
-// {
-//     os << obj.current_range;
-//     return os;
-// }
-// istream& operator>>(istream& input, CircularInt& obj)
-// {
-//     input >> obj.min_range >> obj.max_range;
-//     obj.current_range = obj.min_range;
-//     return input;
-// }
+/* IOstream */
+ostream& operator<< (ostream& os ,CircularInt const& obj)
+{
+    os << obj.current_range;
+    return os;
+}
+istream& operator>>(istream& input, CircularInt& obj)
+{
+    input >> obj.min_range >> obj.max_range;
+    obj.current_range = obj.min_range;
+    return input;
+}
