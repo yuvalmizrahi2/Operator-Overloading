@@ -56,7 +56,7 @@ public:
     // friend bool operator<=(const CircularInt c1 , const int num);//check this
     // friend bool operator<=(const int num ,const CircularInt c1);//check this 
     /* Compound assignment operators */
-    // CircularInt& operator+=(const int other);
+    CircularInt& operator+=(const int other);
     // CircularInt& operator+=(const CircularInt& other);
     // CircularInt& operator-=(const int other);
     // CircularInt& operator-=(const CircularInt& other);

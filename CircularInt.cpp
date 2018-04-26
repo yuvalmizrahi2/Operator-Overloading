@@ -212,15 +212,15 @@ CircularInt::CircularInt(const CircularInt& other)
 //     return num <= c1.current_range;
 // }
 /* Compound assignment operators */
-// CircularInt& CircularInt::operator+=(const int other)
-// {
-//     current_range += other;
-//     while(current_range > max_range)
-//         current_range -= (max_range-min_range+1);
-//     while(current_range < min_range)
-//         current_range += (max_range-min_range+1);
-//     return *this;
-// }
+CircularInt& CircularInt::operator+=(const int other)
+{
+    current_range += other;
+    while(current_range > max_range)
+        current_range -= (max_range-min_range+1);
+    while(current_range < min_range)
+        current_range += (max_range-min_range+1);
+    return *this;
+}
 // CircularInt& CircularInt::operator+=(const CircularInt& other)
 // {
 //     (*this) += other.current_range;
