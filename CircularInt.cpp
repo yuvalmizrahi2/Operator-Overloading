@@ -98,7 +98,7 @@ const CircularInt operator/(CircularInt const& c , const int num)
 const CircularInt operator/(const int num , CircularInt const& c)
 {
     CircularInt copy(c);
-    copy /= num;
+    //copy /= num;
     return copy;
 }
 const CircularInt operator%(const CircularInt& c , const int num)
