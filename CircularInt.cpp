@@ -133,18 +133,16 @@ CircularInt CircularInt::operator--(const int other)
 /* Comparison operators */
 bool operator==(const CircularInt c1 , const CircularInt c2)
 {
-    return c1.current_range == c2.current_range
-        && c1.max_range == c2.max_range &&
-        c1.min_range == c2.min_range;
+    return c1.current_range == c2.current_range;
 }
-// bool operator==(const CircularInt c1 , const int num)
-// {
-//     return c1.current_range == num;
-// }
-// bool operator==(const int num , const CircularInt c1)
-// {
-//     return c1.current_range == num;
-// }
+bool operator==(const CircularInt c1 , const int num)
+{
+    return c1.current_range == num;
+}
+bool operator==(const int num , const CircularInt c1)
+{
+    return c1.current_range == num;
+}
 bool operator!=(const CircularInt c1 , const CircularInt c2)
 {
     return !(c1 == c2);
