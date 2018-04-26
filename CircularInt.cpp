@@ -33,6 +33,7 @@ const CircularInt operator+(const int num,const CircularInt& c )
     temp += copy.current_range;
     copy.current_range = temp;
     copy += 0;
+    cout << "test " << copy << endl;
     return copy;
 }
 const CircularInt operator+(const CircularInt& c , const int num)
