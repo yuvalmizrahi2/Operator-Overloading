@@ -278,14 +278,8 @@ ostream& operator<< (ostream& os ,CircularInt const& obj)
 }
 istream& operator>>(istream& input, CircularInt& obj)
 {
-    ios::pos_type startPosition = input.tellg();
-    if( !(input >> obj.min_range) || !(input >> obj.max_range))
-    {
-        auto errorState = input.rdstate(); // remember error state
-        input.clear(); // clear error so seekg will work
-        input.seekg(startPosition); // rewind
-        input.clear(errorState); // set back the error flag
-    }
+    input >> obj.min_range;
+    input >> obj.max_range;
     obj.current_range = obj.max_range;
     return input;
 }
