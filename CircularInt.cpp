@@ -212,11 +212,11 @@ CircularInt& CircularInt::operator+=(const int other)
         current_range += (max_range-min_range+1);
     return *this;
 }
-// CircularInt& CircularInt::operator+=(const CircularInt& other)
-// {
-//     (*this) += other.current_range;
-//     return *this;
-// }
+CircularInt& CircularInt::operator+=(const CircularInt& other)
+{
+    (*this) += other.current_range;
+    return *this;
+}
 // CircularInt& CircularInt::operator-=(const int other)
 // {
 //     (*this) += (-1)*other;
