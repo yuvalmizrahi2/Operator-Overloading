@@ -100,7 +100,12 @@ const CircularInt operator+(const CircularInt& c , const int num)
 const CircularInt operator/(CircularInt const& c , const int num)
 {
     CircularInt copy(c);
-    copy /= num;
+    try{
+		copy /= num;
+	}
+	catch (const string& message){
+		cout << message << endl;
+	}
     return copy;
 }
 // const CircularInt operator/(const int num , CircularInt const& c)
