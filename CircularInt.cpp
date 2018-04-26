@@ -85,7 +85,7 @@ const CircularInt operator*(const int num , const CircularInt& c)
 }
 const CircularInt operator*(const CircularInt& c1 , const CircularInt& c2)
 {
-    CircularInt copy(c);
+    CircularInt copy(c1);
     copy *= c2.current_range;
     return copy;
 }
