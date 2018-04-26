@@ -275,9 +275,21 @@ ostream& operator<< (ostream& os ,CircularInt const& obj)
     os << obj.current_range;
     return os;
 }
-// istream& operator>>(istream& input, CircularInt& obj)
-// {
-//     input >> obj.min_range >> obj.max_range;
-//     obj.current_range = obj.min_range;
-//     return input;
-// }
+istream& operator>>(istream& input, CircularInt& obj)
+{
+    int min , max;
+    input >> min >> max;
+    if(max < min)
+    {
+        min_range = max;
+        max_range = min;
+        current_range = min_range;
+    }
+    else
+    {
+        min_range = min;
+        max_range = max;
+        current_range = min;
+    }
+    return input;
+}
