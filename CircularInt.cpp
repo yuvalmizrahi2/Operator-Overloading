@@ -280,7 +280,7 @@ istream& operator>>(istream& input, CircularInt& obj)
 {
     int min , max;
     ios::pos_type startPosition = input.tellg();
-    if( !(input << min) || !(input << max))
+    if( !(input >> min) || !(input >> max))
     {
         auto errorState = input.rdstate(); // remember error state
         input.clear(); // clear error so seekg will work
