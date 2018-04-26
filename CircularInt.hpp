@@ -36,7 +36,7 @@ public:
     // CircularInt operator++(const int other);
     // CircularInt& operator--();
     // CircularInt operator--(const int other);
-    // /* Comparison operators */
+    /* Comparison operators */
     // friend bool operator==(const CircularInt c1 , const int num);
     // friend bool operator==(const int num ,const CircularInt c1);
     friend bool operator==(const CircularInt c1 , const CircularInt c2);
@@ -46,16 +46,16 @@ public:
     friend bool operator>(const CircularInt c1 , const CircularInt c2); 
     friend bool operator>(const CircularInt c1 , const int num);//check this
     friend bool operator>(const int num ,const CircularInt c1);//check this 
-    // friend bool operator<(const CircularInt c1 , const CircularInt c2);  
-    // friend bool operator<(const CircularInt c1 , const int num);//check this
-    // friend bool operator<(const int num ,const CircularInt c1);//check this 
+    friend bool operator<(const CircularInt c1 , const CircularInt c2);  
+    friend bool operator<(const CircularInt c1 , const int num);//check this
+    friend bool operator<(const int num ,const CircularInt c1);//check this 
     friend bool operator>=(const CircularInt c1 , const CircularInt c2); 
     friend bool operator>=(const CircularInt c1 , const int num);//check this
     friend bool operator>=(const int num ,const CircularInt c1);//check this 
-    // friend bool operator<=(const CircularInt c1 , const CircularInt c2); 
-    // friend bool operator<=(const CircularInt c1 , const int num);//check this
-    // friend bool operator<=(const int num ,const CircularInt c1);//check this 
-    // /* Compound assignment operators */
+    friend bool operator<=(const CircularInt c1 , const CircularInt c2); 
+    friend bool operator<=(const CircularInt c1 , const int num);//check this
+    friend bool operator<=(const int num ,const CircularInt c1);//check this 
+    /* Compound assignment operators */
     CircularInt& operator+=(const int other);
     // CircularInt& operator+=(const CircularInt& other);
     // CircularInt& operator-=(const int other);

@@ -167,18 +167,18 @@ bool operator>(const int num , const CircularInt c1)
 {
     return num > c1.current_range;
 }
-// bool operator<(const CircularInt c1 , const CircularInt c2)
-// {
-//     return c1.current_range < c2.current_range;
-// }
-// bool operator<(const CircularInt c1 , const int num)
-// {
-//     return c1.current_range < num;
-// }
-// bool operator<(const int num , const CircularInt c1)
-// {
-//     return c1.current_range < num;
-// }
+bool operator<(const CircularInt c1 , const CircularInt c2)
+{
+    return c1.current_range < c2.current_range;
+}
+bool operator<(const CircularInt c1 , const int num)
+{
+    return c1.current_range < num;
+}
+bool operator<(const int num , const CircularInt c1)
+{
+    return num < c1.current_range;
+}
 bool operator>=(const CircularInt c1 , const CircularInt c2)
 {
     return c1 == c2 || c1 > c2;
@@ -191,18 +191,18 @@ bool operator>=(const int num , const CircularInt c1)
 {
     return num >= c1.current_range;
 }
-// bool operator<=(const CircularInt c1 , const CircularInt c2)
-// {
-//     return c1 == c2 || c1 < c2;
-// }
-// bool operator<=(const CircularInt c1 , const int num)
-// {
-//     return c1.current_range <= num;
-// }
-// bool operator<=(const int num , const CircularInt c1)
-// {
-//     return c1.current_range <= num;
-// }
+bool operator<=(const CircularInt c1 , const CircularInt c2)
+{
+    return c1 == c2 || c1 < c2;
+}
+bool operator<=(const CircularInt c1 , const int num)
+{
+    return c1.current_range <= num;
+}
+bool operator<=(const int num , const CircularInt c1)
+{
+    return num <= c1.current_range;
+}
 /* Compound assignment operators */
 CircularInt& CircularInt::operator+=(const int other)
 {
