@@ -46,5 +46,6 @@ Further look into the classes:
 Compile Command:  
 --  
 g++ -std=c++11 *.cpp  
+need to add a main to the completion level  
 
 @Kineret Ruth Nahary 
