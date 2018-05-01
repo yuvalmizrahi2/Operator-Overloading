@@ -6,8 +6,7 @@ Assignment 4 and 5 in a C++ course
 Authors:
 --
 Yuval Mizrahi  
-Inon Peer
-
+Inon Peer  
 Aviv Rovshitz
 
 **Intoduction**
