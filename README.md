@@ -46,3 +46,5 @@ Further look into the classes:
 Compile Command:  
 --  
 g++ -std=c++11 *.cpp  
+
+@Kineret Ruth Nahary 
