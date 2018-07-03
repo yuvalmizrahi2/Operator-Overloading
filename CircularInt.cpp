@@ -41,15 +41,15 @@ const CircularInt operator+(const int num,const CircularInt& c )
     copy += num;
     return copy;
 }
-const CircularInt operator+(const CircularInt& c , const int num)
+const CircularInt CircularInt::operator+(const int num)
 {
-    CircularInt copy(c);
+    CircularInt copy(*this);
     copy += num;
     return copy;
 }
-const CircularInt operator+(CircularInt const& c1 , CircularInt const& c2)
+const CircularInt CircularInt::operator+(const CircularInt& c2)
 {
-    CircularInt temp(c1);
+    CircularInt temp(*this);
     temp += c2;
     return temp;
 }
@@ -60,15 +60,15 @@ const CircularInt operator-(const int num, CircularInt const& c )
     copy *= (-1);
     return copy;
 }
-const CircularInt operator-(const CircularInt& c , const int num)
+const CircularInt CircularInt::operator-(const int num)
 {
-    CircularInt copy(c);
+    CircularInt copy(*this);
     copy -=num;
     return copy;
 }
-const CircularInt operator-(const CircularInt& c1 , const CircularInt& c2)
+const CircularInt CircularInt::operator-(const CircularInt& c2)
 {
-    CircularInt temp(c1);
+    CircularInt temp(*this);
     temp -= c2;
     return temp;
 
@@ -79,9 +79,9 @@ CircularInt CircularInt::operator-()
     copy *= (-1);
     return copy;
 }
-const CircularInt operator*(const CircularInt& c , const int num)
+const CircularInt CircularInt::operator*(const int num)
 {
-    CircularInt copy(c);
+    CircularInt copy(*this);
     copy *= num;
     return copy;
 }
@@ -91,15 +91,15 @@ const CircularInt operator*(const int num , const CircularInt& c)
     copy *= num;
     return copy;
 }
-const CircularInt operator*(const CircularInt& c1 , const CircularInt& c2)
+const CircularInt CircularInt::operator*(const CircularInt& c2)
 {
-    CircularInt copy(c1);
+    CircularInt copy(*this);
     copy *= c2.current_range;
     return copy;
 }
-const CircularInt operator/(CircularInt const& c , const int num)
+const CircularInt CircularInt::operator/(const int num)
 {
-    CircularInt copy(c);
+    CircularInt copy(*this);
     copy /= num;
     return copy;
 }
@@ -110,9 +110,9 @@ const CircularInt operator/(const int num , CircularInt const& c)
     copy += 0;
     return copy;
 }
-const CircularInt operator%(const CircularInt& c , const int num)
+const CircularInt CircularInt::operator%(const int num)
 {
-    CircularInt copy(c);
+    CircularInt copy(*this);
     copy %= num;
     return copy;
 }
@@ -139,73 +139,73 @@ CircularInt CircularInt::operator--(const int other)
     return copy;
 }
 /* Comparison operators */
-bool operator==(const CircularInt c1 , const CircularInt c2)
+bool CircularInt::operator==(const CircularInt c2)
 {
-    return c1.current_range == c2.current_range;
+    return this->current_range == c2.current_range;
 }
-bool operator==(const CircularInt c1 , const int num)
+bool CircularInt::operator==(const int num)
 {
-    return c1.current_range == num;
+    return this->current_range == num;
 }
 bool operator==(const int num , const CircularInt c1)
 {
     return c1.current_range == num;
 }
-bool operator!=(const CircularInt c1 , const CircularInt c2)
+bool CircularInt::operator!=(const CircularInt c2)
 {
-    return !(c1 == c2);
+    return !(*this == c2);
 }
-bool operator!=(const CircularInt c1 , const int num)
+bool CircularInt::operator!=(const int num)
 {
-    return !(c1.current_range == num);
+    return !(this->current_range == num);
 }
 bool operator!=(const int num , const CircularInt c1)
 {
     return !(c1.current_range == num);
 }
-bool operator>(const CircularInt c1 , const CircularInt c2)
+bool CircularInt::operator>(const CircularInt c2)
 {
-    return c1.current_range > c2.current_range;
+    return this->current_range > c2.current_range;
 }
-bool operator>(const CircularInt c1 , const int num)
+bool CircularInt::operator>(const int num)
 {
-    return c1.current_range > num;
+    return this->current_range > num;
 }
 bool operator>(const int num , const CircularInt c1)
 {
     return num > c1.current_range;
 }
-bool operator<(const CircularInt c1 , const CircularInt c2)
+bool CircularInt::operator<(const CircularInt c2)
 {
-    return c1.current_range < c2.current_range;
+    return this->current_range < c2.current_range;
 }
-bool operator<(const CircularInt c1 , const int num)
+bool CircularInt::operator<(const int num)
 {
-    return c1.current_range < num;
+    return this->current_range < num;
 }
 bool operator<(const int num , const CircularInt c1)
 {
     return num < c1.current_range;
 }
-bool operator>=(const CircularInt c1 , const CircularInt c2)
+bool CircularInt::operator>=(const CircularInt c2)
 {
-    return c1 == c2 || c1 > c2;
+    return *this == c2 || *this > c2;
 }
-bool operator>=(const CircularInt c1 , const int num)
+bool CircularInt::operator>=(const int num)
 {
-    return c1.current_range >= num;
+    return this->current_range >= num;
 }
 bool operator>=(const int num , const CircularInt c1)
 {
     return num >= c1.current_range;
 }
-bool operator<=(const CircularInt c1 , const CircularInt c2)
+bool CircularInt::operator<=(const CircularInt c2)
 {
-    return c1 == c2 || c1 < c2;
+    return *this == c2 || *this < c2;
 }
-bool operator<=(const CircularInt c1 , const int num)
+bool CircularInt::operator<=(const int num)
 {
-    return c1.current_range <= num;
+    return this->current_range <= num;
 }
 bool operator<=(const int num , const CircularInt c1)
 {
